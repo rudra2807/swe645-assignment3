@@ -35,6 +35,7 @@ public class StudentSurveyController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteSurvey(@PathVariable Long id) {
+        surveyService.deleteSurvey(id);
         return new ResponseEntity<String>("Entry Deleted", HttpStatus.OK);
     }
 }
