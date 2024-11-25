@@ -15,6 +15,14 @@ pipeline {
                     url: 'https://github.com/rudra2807/swe645-assignment3.git'
             }
         }
+        stage('Build JAR File') {
+            steps {
+                script {
+                    // Run Maven to clean and package the application
+                    bat "mvn clean package -DskipTests"
+                }
+            }
+        }
         stage('Build Docker Image') {
             steps {
                 script {
