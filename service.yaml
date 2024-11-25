@@ -1,0 +1,24 @@
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: my-website-service
+# spec:
+#   type: LoadBalancer
+#   ports:
+#     - port: 80
+#       targetPort: 80
+#   selector:
+#     app: my-website
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: swe645-assignment3-service
+spec:
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  selector:
+    app: swe645-assignment3

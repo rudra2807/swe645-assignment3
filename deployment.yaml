@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: swe645-assignment3-deployment
+  labels:
+    app: swe645-assignment3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: swe645-assignment3
+  template:
+    metadata:
+      labels:
+        app: swe645-assignment3
+    spec:
+      containers:
+        - name: swe645-assignment3-container
+          image: rudra2807/swe645-assignment3:latest # Replace with your Docker image
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:mysql://swe645-db1-instance.c4jwqm8i3jbz.us-east-1.rds.amazonaws.com:3306/swe645_db1
+            - name: SPRING_DATASOURCE_USERNAME
+              value: admin
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: swe645admin
