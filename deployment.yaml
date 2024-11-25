@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: swe645-assignment3-container
-          image: rudra2807/swe645-assignment3:latest # Replace with your Docker image
+          image: rudra2807/swe645-assignment3:latest
           ports:
             - containerPort: 8080
           env:
