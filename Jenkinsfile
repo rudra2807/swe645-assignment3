@@ -18,8 +18,9 @@ pipeline {
         stage('Build JAR File') {
             steps {
                 script {
+                    def mvnHome = tool 'Maven' // 'Maven' is the name you configured in Jenkins
                     // Run Maven to clean and package the application
-                    bat "mvn clean package -DskipTests"
+                    bat "${mvnHome}/bin/mvn clean package -DskipTests"
                 }
             }
         }
