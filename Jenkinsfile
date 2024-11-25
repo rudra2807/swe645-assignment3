@@ -18,9 +18,10 @@ pipeline {
         stage('Build JAR File') {
             steps {
                 script {
-                    def mvnHome = tool 'Maven' // 'Maven' is the name you configured in Jenkins
-                    // Run Maven to clean and package the application
-                    bat "${mvnHome}/bin/mvn clean package -DskipTests"
+                    dir('swe645-assignment3') {
+                        def mvnHome = tool 'Maven' // Use Maven installed in Jenkins
+                        bat "${mvnHome}/bin/mvn clean package -DskipTests"
+                    }
                 }
             }
         }
