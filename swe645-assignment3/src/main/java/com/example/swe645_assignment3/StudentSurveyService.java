@@ -20,7 +20,16 @@ public class StudentSurveyService {
 
         existingSurvey.setFirstName(survey.getFirstName());
         existingSurvey.setLastName(survey.getLastName());
+        existingSurvey.setAddress(survey.getAddress());
         existingSurvey.setEmail(survey.getEmail());
+        existingSurvey.setCity(survey.getCity());
+        existingSurvey.setState(survey.getState());
+        existingSurvey.setZip(survey.getZip());
+        existingSurvey.setTelephone(survey.getTelephone());
+        existingSurvey.setSurveyDate(survey.getSurveyDate());
+        existingSurvey.setLikedMost(survey.getLikedMost());
+        existingSurvey.setInterestSource(survey.getInterestSource());
+        existingSurvey.setRecommendation(survey.getRecommendation());
 
         repository.save(existingSurvey);
         return existingSurvey;
